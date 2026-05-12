@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Compare ABTs</title>
+</head>
+<body>
+
+  <h3>Compare ABTs</h3>
+
+  {% if error %}
+    <p style="color:red">{{ error }}</p>
+  {% endif %}
+
+  <form method="POST" action="/compare">
+
+    <label>Base Library</label><br>
+    <input type="text" name="base_caslib" required><br><br>
+
+    <label>Base Table</label><br>
+    <input type="text" name="base_table" required><br><br>
+
+    <label>Compare Library</label><br>
+    <input type="text" name="compare_caslib" required><br><br>
+
+    <label>Compare Table</label><br>
+    <input type="text" name="compare_table" required><br><br>
+
+    <button type="submit">Compare</button>
+
+  </form>
+
+</body>
+</html>

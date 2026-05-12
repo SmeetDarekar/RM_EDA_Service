@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ABT Comparison Result</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 32px;
+      line-height: 1.6;
+    }
+    .error {
+      color: #b00020;
+      font-weight: bold;
+    }
+    .section {
+      margin-top: 28px;
+    }
+    .card {
+      border: 1px solid #ddd;
+      padding: 16px;
+      border-radius: 6px;
+      margin-top: 16px;
+      background-color: #fafafa;
+    }
+    .risk {
+      border-left: 6px solid #d32f2f;
+    }
+    .warn {
+      border-left: 6px solid #f9a825;
+    }
+    .info {
+      border-left: 6px solid #1976d2;
+    }
+    .verdict-accepted {
+      color: green;
+      font-weight: bold;
+    }
+    .verdict-rejected {
+      color: red;
+      font-weight: bold;
+    }
+    table {
+      border-collapse: collapse;
+      margin-top: 12px;
+      width: 80%;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px 12px;
+      text-align: left;
+    }
+    th {
+      background-color: #f4f4f4;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    .muted {
+      color: #666;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+
+<body>
+
+<h2>ABT Comparison Summary</h2>
+
+{% if error %}
+  <p class="error">❌ {{ error }}</p>
+{% else %}
+
+<!-- ================================================= -->
+<!-- 1. CONTEXT -->
+<!-- ================================================= -->
+<div class="section">
+  <p><strong>Base ABT:</strong> {{ base }}</p>
+  <p><strong>Compared ABT:</strong> {{ compare }}</p>
+</div>
+
+<!-- ================================================= -->
+<!-- 2. VERDICT -->
+<!-- ================================================= -->
+<div class="section">
+  <h3>Overall Verdict</h3>
+
+  {% if kpis.verdict.result == "ACCEPTED" %}
+    <p class="verdict-accepted">✅ ACCEPTED</p>
+  {% else %}
+    <p class="verdict-rejected">❌ REJECTED</p>
+  {% endif %}
+
+  <ul>
+    {% for reason in kpis.verdict.reasons %}
+      <li>{{ reason }}</li>
+    {% endfor %}
+  </ul>
+</div>
+
+<!-- ================================================= -->
+<!-- 3. DOMINANT INTERPRETIVE INSIGHTS (NEW) -->
+<!-- ================================================= -->
+<div class="section">
+  <h3>Interpretation & Impact</h3>
+
+  {% for insight in insights %}
+    <div class="card
+      {% if insight.type == 'RISK' %}risk{% elif insight.type == 'WARN' %}warn{% else %}info{% endif %}">
+      <h4>{{ insight.type }} – {{ insight.title }}</h4>
+
+      <p><strong>What we observed:</strong> {{ insight.observation }}</p>
+
+      <p><strong>Evidence:</strong> {{ insight.evidence }}</p>
+
+      <p><strong>Why this matters:</strong> {{ insight.impact }}</p>
+
+      <p><strong>Recommended action:</strong> {{ insight.suggestedAction }}</p>
+    </div>
+  {% endfor %}
+</div>
+
+<!-- ================================================= -->
+<!-- 4. RAW KPIs (SECONDARY, COLLAPSIBLE MENTALLY) -->
+<!-- ================================================= -->
+<div class="section">
+  <h3>Detailed KPIs (For Reference)</h3>
+
+  <!-- Structural -->
+  <h4>Structural Integrity</h4>
+  <table>
+    <tr><th>KPI</th><th>Value</th></tr>
+    <tr>
+      <td>Missing Columns</td>
+      <td>{{ kpis.structural.missing_columns_count }}</td>
+    </tr>
+    <tr>
+      <td>Additional Columns</td>
+      <td>{{ kpis.structural.additional_columns_count }}</td>
+    </tr>
+  </table>
+
+  {% if kpis.structural.missing_columns %}
+    <p class="muted"><strong>Missing columns (sample):</strong></p>
+    <ul>
+      {% for col in kpis.structural.missing_columns[:10] %}
+        <li>{{ col }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  <!-- Data Quality -->
+  <h4>Data Quality</h4>
+  <table>
+    <tr><th>Metric</th><th>Value</th></tr>
+    <tr>
+      <td>Base Median Missing %</td>
+      <td>{{ kpis.data_quality.base_missing_median }}</td>
+    </tr>
+    <tr>
+      <td>Compare Median Missing %</td>
+      <td>{{ kpis.data_quality.compare_missing_median }}</td>
+    </tr>
+  </table>
+
+  <!-- Statistical Stability -->
+  {% if kpis.statistical_alignment.total_compared > 0 %}
+    <h4>Statistical Stability</h4>
+    <table>
+      <tr><th>KPI</th><th>Value</th></tr>
+      <tr>
+        <td>% Features Within Mean Tolerance</td>
+        <td>{{ kpis.statistical_alignment.mean_alignment_pct }}%</td>
+      </tr>
+      <tr>
+        <td>Total Features Compared</td>
+        <td>{{ kpis.statistical_alignment.total_compared }}</td>
+      </tr>
+    </table>
+  {% else %}
+    <p class="muted">
+      Statistical comparison skipped due to insufficient common features.
+    </p>
+  {% endif %}
+</div>
+
+<!-- ================================================= -->
+<!-- 5. OPTIONAL LLM NARRATION -->
+<!-- ================================================= -->
+{% if narration_prompt %}
+<div class="section">
+  <h3>Automated Explanation (Draft)</h3>
+  
+<div class="card info">
+  <h4>Automated Explanation</h4>
+  <p>{{ llm_explanation }}</p>
+</div>
+
+</div>
+{% endif %}
+
+
+<hr>
+
+{% if kpi_summary %}
+<h3>KPI Comparison Summary</h3>
+
+<table>
+  <tr>
+    <th>KPI</th>
+    <th>Base ABT</th>
+    <th>Compared ABT</th>
+    <th>Decision</th>
+    <th>Explanation</th>
+  </tr>
+
+  {% for row in kpi_summary %}
+  <tr>
+    <td>{{ row.kpi }}</td>
+    <td>{{ row.base }}</td>
+    <td>{{ row.compare }}</td>
+    <td>
+      {% if row.decision == "REJECTED" %}❌
+      {% elif row.decision == "ACCEPTED" %}✅
+      {% else %}⚠️{% endif %}
+      {{ row.decision }}
+    </td>
+    <td>{{ row.reason }}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endif %}
+
+
+
+
+<h3>Column-Level Data Quality Summary</h3>
+<p class="muted">Showing most relevant common columns only</p>
+
+{% if column_quality and column_quality|length > 0 %}
+<table>
+  <tr>
+    <th>Column Name</th>
+    <th>Base Completeness</th>
+    <th>Compare Completeness</th>
+    <th>Status</th>
+    <th>Interpretation</th>
+  </tr>
+
+  {% for col in column_quality %}
+  <tr>
+    <td>{{ col.column }}</td>
+    <td>{{ col.base }}</td>
+    <td>{{ col.compare }}</td>
+    <td>
+      {% if col.status == "REJECTED" %}❌{% else %}✅{% endif %}
+      {{ col.status }}
+    </td>
+    <td>{{ col.reason }}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% else %}
+<p class="muted">
+  Column-level completeness comparison is not shown because suitable
+  completeness metadata was not available for common columns.
+</p>
+{% endif %}
+
+
+<hr>
+
+<h3>Column-Level Comparison (Selected Features)</h3>
+
+{% if column_comparison and column_comparison|length > 0 %}
+<table>
+  <tr>
+    <th>Column Name</th>
+    <th>Base Completeness</th>
+    <th>Compare Completeness</th>
+    <th>Status</th>
+  </tr>
+
+  {% for col in column_comparison %}
+  <tr>
+    <td>{{ col.column }}</td>
+    <td>{{ col.base }}</td>
+    <td>{{ col.compare }}</td>
+    <td>{{ col.status }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+<h4>Interpretation</h4>
+<ul>
+  {% for col in column_comparison %}
+    <li><strong>{{ col.column }}</strong>: {{ col.reason }}</li>
+  {% endfor %}
+</ul>
+
+{% else %}
+<p class="muted">
+  Column-level comparison could not be generated due to insufficient
+  completeness metadata for common columns.
+</p>
+{% endif %}
+
+<!-- ================================================= -->
+<!-- 6. NAVIGATION -->
+<!-- ================================================= -->
+<div class="section">
+  <a href="/compare">← Run another comparison</a>
+</div>
+
+{% endif %}
+
+</body>
+</html>

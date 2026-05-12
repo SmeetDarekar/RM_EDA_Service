@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Analysis Results</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+    .insight {
+      margin-bottom: 15px;
+    }
+    .severity-CRITICAL {
+      color: red;
+      font-weight: bold;
+    }
+    .severity-WARN {
+      color: orange;
+      font-weight: bold;
+    }
+    .severity-INFO {
+      color: green;
+      font-weight: bold;
+    }
+    .llm-box {
+      margin-top: 30px;
+      padding: 15px;
+      border-left: 5px solid #1976d2;
+      background-color: #f5f8ff;
+    }
+  </style>
+</head>
+
+<body>
+  <h3>Analysis Result</h3>
+
+  {% if error %}
+    <p style="color:red">{{ error }}</p>
+  {% else %}
+    <p><strong>Table:</strong> {{ table }}</p>
+    <p><strong>Status:</strong> {{ status }}</p>
+
+    <h4>Insights</h4>
+
+    <ul>
+      {% for ins in insights %}
+        <li class="insight">
+          <span class="severity-{{ ins.severity }}">
+            {{ ins.category }} ({{ ins.severity }})
+          </span>
+          <br>
+          {{ ins.message }}
+        </li>
+      {% endfor %}
+    </ul>
+
+    {% if llm_explanation %}
+      <div class="llm-box">
+        <h4>Automated Explanation</h4>
+        <p>{{ llm_explanation }}</p>
+      </div>
+    {% endif %}
+  {% endif %}
+
+  <br>
+  <a href="/">Back</a>
+</body>
+</html>

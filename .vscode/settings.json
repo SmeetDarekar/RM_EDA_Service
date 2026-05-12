@@ -1,0 +1,6 @@
+{
+    "python.analysis.extraPaths": [
+        "./abt",
+        "./abt/llm"
+    ]
+}

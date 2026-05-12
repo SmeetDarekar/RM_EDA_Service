@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Comparing ABTs</title>
+</head>
+<body>
+
+  <h3>Comparing ABTs…</h3>
+
+  <ul>
+    <li>✔ Inputs validated</li>
+    <li>✔ Checking local snapshots</li>
+    <li>⏳ Fetching metadata if required</li>
+    <li>⏳ Running comparison</li>
+  </ul>
+
+  <p>Please wait…</p>
+
+  <form id="runForm" method="POST" action="/compare/run">
+    <input type="hidden" name="base_caslib" value="{{ base_caslib }}">
+    <input type="hidden" name="base_table" value="{{ base_table }}">
+    <input type="hidden" name="compare_caslib" value="{{ compare_caslib }}">
+    <input type="hidden" name="compare_table" value="{{ compare_table }}">
+  </form>
+
+  <script>
+    document.getElementById("runForm").submit();
+  </script>
+
+</body>
+</html>

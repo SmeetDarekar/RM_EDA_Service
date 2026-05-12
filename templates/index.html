@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ABT Analysis</title>
+  <style>
+    body { font-family: Arial; margin: 40px; }
+    .box { width: 400px; margin-bottom: 20px; }
+    input { width: 100%; padding: 8px; margin-top: 5px; }
+    button { padding: 10px 20px; margin-top: 10px; }
+  </style>
+</head>
+
+<body>
+  <h2>ABT Analysis Dashboard</h2>
+
+  <form method="post" action="/analyze">
+    <div class="box">
+      <label>Library Name</label>
+      <input name="caslib" required />
+    </div>
+
+    <div class="box">
+      <label>Base Table Name</label>
+      <input name="table" required />
+    </div>
+
+    <button type="submit">Analyze</button>
+  </form>
+
+  <hr />
+
+  <form method="post" action="/compare">
+    <div class="box">
+      <label>Base Table</label>
+      <input name="base_table" required />
+    </div>
+
+    <div class="box">
+      <label>Compare Table</label>
+      <input name="compare_table" required />
+    </div>
+
+    <button type="submit">Compare</button>
+  </form>
+
+</body>
+</html>

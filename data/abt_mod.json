@@ -1,0 +1,653 @@
+{
+  "tableName": "_14_29_147_CONT_TGT_FACT",
+  "version": 2,
+  "fetchedAt": "2026-05-04T07:05:56.036027+00:00",
+  "source": "SAS_Viya",
+  "api": "/catalog/instances",
+  "level": "detailedMetrics",
+  "data": {
+    "version": 2,
+    "accept": "application/vnd.sas.metadata.instance",
+    "count": 6,
+    "start": 0,
+    "limit": 3000,
+    "name": "instances",
+    "items": [
+      {
+        "creationTimeStamp": "2026-04-30T09:33:53.85Z",
+        "createdBy": "sasadm",
+        "modifiedTimeStamp": "2026-04-30T09:33:53.85Z",
+        "modifiedBy": "sasadm",
+        "id": "a8a7bd09-0ef8-7149-8d8b-b20ec3d55223",
+        "links": [
+          {
+            "method": "GET",
+            "rel": "self",
+            "href": "/catalog/instances/a8a7bd09-0ef8-7149-8d8b-b20ec3d55223",
+            "uri": "/catalog/instances/a8a7bd09-0ef8-7149-8d8b-b20ec3d55223",
+            "type": "application/vnd.sas.metadata.instance.entity"
+          },
+          {
+            "method": "GET",
+            "rel": "alternate",
+            "href": "/catalog/instances/a8a7bd09-0ef8-7149-8d8b-b20ec3d55223",
+            "uri": "/catalog/instances/a8a7bd09-0ef8-7149-8d8b-b20ec3d55223",
+            "type": "application/vnd.sas.summary"
+          },
+          {
+            "method": "GET",
+            "rel": "up",
+            "href": "/catalog/instances",
+            "uri": "/catalog/instances",
+            "type": "application/vnd.sas.collection",
+            "itemType": "application/vnd.sas.metadata.instance"
+          },
+          {
+            "method": "PATCH",
+            "rel": "patch",
+            "href": "/catalog/updates/instances/a8a7bd09-0ef8-7149-8d8b-b20ec3d55223",
+            "uri": "/catalog/updates/instances/a8a7bd09-0ef8-7149-8d8b-b20ec3d55223",
+            "type": "application/json-patch",
+            "responseType": "application/vnd.sas.metadata.instance.entity"
+          },
+          {
+            "method": "PUT",
+            "rel": "update",
+            "href": "/catalog/instances/a8a7bd09-0ef8-7149-8d8b-b20ec3d55223",
+            "uri": "/catalog/instances/a8a7bd09-0ef8-7149-8d8b-b20ec3d55223",
+            "type": "application/vnd.sas.metadata.instance.entity",
+            "responseType": "application/vnd.sas.metadata.instance.entity"
+          },
+          {
+            "method": "DELETE",
+            "rel": "delete",
+            "href": "/catalog/instances/a8a7bd09-0ef8-7149-8d8b-b20ec3d55223",
+            "uri": "/catalog/instances/a8a7bd09-0ef8-7149-8d8b-b20ec3d55223"
+          },
+          {
+            "method": "GET",
+            "rel": "definition",
+            "href": "/catalog/definitions/87d48d12-53c0-473c-ab34-531817319e79",
+            "uri": "/catalog/definitions/87d48d12-53c0-473c-ab34-531817319e79",
+            "type": "application/vnd.sas.metadata.definition.entity"
+          }
+        ],
+        "version": 1,
+        "instanceType": "entity",
+        "definition": "casColumn",
+        "definitionId": "87d48d12-53c0-473c-ab34-531817319e79",
+        "name": "ACTUAL_OUTCOME_VALUE",
+        "label": "Actual Outcome Value",
+        "description": "Actual Outcome Value",
+        "type": "casColumn",
+        "attributes": {
+          "analysisTimeStamp": "2026-04-30T09:33:51.172Z",
+          "bestChartType": "box",
+          "cardinalityCount": 25501,
+          "casDataType": "double",
+          "completenessPercent": 87,
+          "dataType": "num",
+          "hasOutliers": true,
+          "hasUniqueField": false,
+          "kurtosis": 5118.4182483,
+          "leastCommonValue": -5278.195946,
+          "max": 43485.183486,
+          "mean": 1.3801329917,
+          "median": -0.278958648,
+          "min": -4278.195946,
+          "missingCount": 1533,
+          "mode": 0,
+          "mostCommonValue": 0,
+          "nOutliers": 1111,
+          "ordinalPosition": 3,
+          "quantiles25": -3.040964393,
+          "quantiles50": -0.678958648,
+          "quantiles75": 0.7044410415,
+          "rawLength": 8,
+          "sasDataType": "num",
+          "skewness": 68.66229956,
+          "standardDeviation": 275.51571003,
+          "statisticalScale": "interval",
+          "uniquenessPercent": 87.127969987
+        }
+      },
+      {
+        "creationTimeStamp": "2026-04-30T09:33:53.85Z",
+        "createdBy": "sasadm",
+        "modifiedTimeStamp": "2026-04-30T09:33:53.85Z",
+        "modifiedBy": "sasadm",
+        "id": "2d9af7ce-7eb3-5642-9d87-b17567b18760",
+        "links": [
+          {
+            "method": "GET",
+            "rel": "self",
+            "href": "/catalog/instances/2d9af7ce-7eb3-5642-9d87-b17567b18760",
+            "uri": "/catalog/instances/2d9af7ce-7eb3-5642-9d87-b17567b18760",
+            "type": "application/vnd.sas.metadata.instance.entity"
+          },
+          {
+            "method": "GET",
+            "rel": "alternate",
+            "href": "/catalog/instances/2d9af7ce-7eb3-5642-9d87-b17567b18760",
+            "uri": "/catalog/instances/2d9af7ce-7eb3-5642-9d87-b17567b18760",
+            "type": "application/vnd.sas.summary"
+          },
+          {
+            "method": "GET",
+            "rel": "up",
+            "href": "/catalog/instances",
+            "uri": "/catalog/instances",
+            "type": "application/vnd.sas.collection",
+            "itemType": "application/vnd.sas.metadata.instance"
+          },
+          {
+            "method": "PATCH",
+            "rel": "patch",
+            "href": "/catalog/updates/instances/2d9af7ce-7eb3-5642-9d87-b17567b18760",
+            "uri": "/catalog/updates/instances/2d9af7ce-7eb3-5642-9d87-b17567b18760",
+            "type": "application/json-patch",
+            "responseType": "application/vnd.sas.metadata.instance.entity"
+          },
+          {
+            "method": "PUT",
+            "rel": "update",
+            "href": "/catalog/instances/2d9af7ce-7eb3-5642-9d87-b17567b18760",
+            "uri": "/catalog/instances/2d9af7ce-7eb3-5642-9d87-b17567b18760",
+            "type": "application/vnd.sas.metadata.instance.entity",
+            "responseType": "application/vnd.sas.metadata.instance.entity"
+          },
+          {
+            "method": "DELETE",
+            "rel": "delete",
+            "href": "/catalog/instances/2d9af7ce-7eb3-5642-9d87-b17567b18760",
+            "uri": "/catalog/instances/2d9af7ce-7eb3-5642-9d87-b17567b18760"
+          },
+          {
+            "method": "GET",
+            "rel": "definition",
+            "href": "/catalog/definitions/87d48d12-53c0-473c-ab34-531817319e79",
+            "uri": "/catalog/definitions/87d48d12-53c0-473c-ab34-531817319e79",
+            "type": "application/vnd.sas.metadata.definition.entity"
+          }
+        ],
+        "version": 1,
+        "instanceType": "entity",
+        "definition": "casColumn",
+        "definitionId": "87d48d12-53c0-473c-ab34-531817319e79",
+        "name": "ESTIMATED_OUTCOME_VALUE",
+        "label": "Estimated Outcome Value",
+        "description": "Estimated Outcome Value",
+        "type": "casColumn",
+        "attributes": {
+          "analysisTimeStamp": "2026-04-30T09:33:51.172Z",
+          "bestChartType": "box",
+          "cardinalityCount": 10463,
+          "casDataType": "double",
+          "completenessPercent": 100,
+          "dataType": "num",
+          "hasOutliers": true,
+          "hasUniqueField": false,
+          "kurtosis": 0.3298103729,
+          "leastCommonValue": -0.534726324,
+          "max": 2.9302522614,
+          "mean": 0.876349528,
+          "median": 0.7794286692,
+          "min": -0.434726324,
+          "missingCount": 0,
+          "mode": 0.4114570894,
+          "mostCommonValue": 0.4114570894,
+          "nOutliers": 120,
+          "ordinalPosition": 2,
+          "quantiles25": 0.4114570894,
+          "quantiles50": 0.6694286692,
+          "quantiles75": 1.057248763,
+          "rawLength": 8,
+          "sasDataType": "num",
+          "skewness": 0.9810121688,
+          "standardDeviation": 0.4440697366,
+          "statisticalScale": "interval",
+          "uniquenessPercent": 91.228011672
+        }
+      },
+      {
+        "creationTimeStamp": "2026-04-30T09:33:53.85Z",
+        "createdBy": "sasadm",
+        "modifiedTimeStamp": "2026-04-30T09:33:53.85Z",
+        "modifiedBy": "sasadm",
+        "id": "09330998-ff1e-a74e-9414-19bb8d4b02db",
+        "links": [
+          {
+            "method": "GET",
+            "rel": "self",
+            "href": "/catalog/instances/09330998-ff1e-a74e-9414-19bb8d4b02db",
+            "uri": "/catalog/instances/09330998-ff1e-a74e-9414-19bb8d4b02db",
+            "type": "application/vnd.sas.metadata.instance.entity"
+          },
+          {
+            "method": "GET",
+            "rel": "alternate",
+            "href": "/catalog/instances/09330998-ff1e-a74e-9414-19bb8d4b02db",
+            "uri": "/catalog/instances/09330998-ff1e-a74e-9414-19bb8d4b02db",
+            "type": "application/vnd.sas.summary"
+          },
+          {
+            "method": "GET",
+            "rel": "up",
+            "href": "/catalog/instances",
+            "uri": "/catalog/instances",
+            "type": "application/vnd.sas.collection",
+            "itemType": "application/vnd.sas.metadata.instance"
+          },
+          {
+            "method": "PATCH",
+            "rel": "patch",
+            "href": "/catalog/updates/instances/09330998-ff1e-a74e-9414-19bb8d4b02db",
+            "uri": "/catalog/updates/instances/09330998-ff1e-a74e-9414-19bb8d4b02db",
+            "type": "application/json-patch",
+            "responseType": "application/vnd.sas.metadata.instance.entity"
+          },
+          {
+            "method": "PUT",
+            "rel": "update",
+            "href": "/catalog/instances/09330998-ff1e-a74e-9414-19bb8d4b02db",
+            "uri": "/catalog/instances/09330998-ff1e-a74e-9414-19bb8d4b02db",
+            "type": "application/vnd.sas.metadata.instance.entity",
+            "responseType": "application/vnd.sas.metadata.instance.entity"
+          },
+          {
+            "method": "DELETE",
+            "rel": "delete",
+            "href": "/catalog/instances/09330998-ff1e-a74e-9414-19bb8d4b02db",
+            "uri": "/catalog/instances/09330998-ff1e-a74e-9414-19bb8d4b02db"
+          },
+          {
+            "method": "GET",
+            "rel": "definition",
+            "href": "/catalog/definitions/87d48d12-53c0-473c-ab34-531817319e79",
+            "uri": "/catalog/definitions/87d48d12-53c0-473c-ab34-531817319e79",
+            "type": "application/vnd.sas.metadata.definition.entity"
+          }
+        ],
+        "version": 1,
+        "instanceType": "entity",
+        "definition": "casColumn",
+        "definitionId": "87d48d12-53c0-473c-ab34-531817319e79",
+        "name": "MODEL_RK",
+        "label": "_RKorSK",
+        "description": "_RKorSK",
+        "type": "casColumn",
+        "attributes": {
+          "analysisTimeStamp": "2026-04-30T09:33:51.172Z",
+          "bestChartType": "frequency",
+          "cardinalityCount": 1,
+          "casDataType": "double",
+          "completenessPercent": 100,
+          "dataType": "num",
+          "hasOutliers": false,
+          "hasUniqueField": false,
+          "leastCommonValue": 14,
+          "max": 14,
+          "mean": 14,
+          "median": 14,
+          "min": 14,
+          "missingCount": 0,
+          "mode": 14,
+          "mostCommonValue": 14,
+          "nOutliers": 0,
+          "ordinalPosition": 4,
+          "quantiles25": 14,
+          "quantiles50": 14,
+          "quantiles75": 14,
+          "rawLength": 8,
+          "sasDataType": "num",
+          "sasFormat": "F",
+          "sasFormatFull": "F11.",
+          "semanticTypeId": "GENERIC_ID",
+          "semanticTypeScore": 201,
+          "standardDeviation": 0,
+          "statisticalScale": "unary",
+          "uniquenessPercent": 0.008336807
+        }
+      },
+      {
+        "creationTimeStamp": "2026-04-30T09:33:53.85Z",
+        "createdBy": "sasadm",
+        "modifiedTimeStamp": "2026-04-30T09:33:53.85Z",
+        "modifiedBy": "sasadm",
+        "id": "c814793a-99bb-9b44-85a9-18d162cb8df8",
+        "links": [
+          {
+            "method": "GET",
+            "rel": "self",
+            "href": "/catalog/instances/c814793a-99bb-9b44-85a9-18d162cb8df8",
+            "uri": "/catalog/instances/c814793a-99bb-9b44-85a9-18d162cb8df8",
+            "type": "application/vnd.sas.metadata.instance.entity"
+          },
+          {
+            "method": "GET",
+            "rel": "alternate",
+            "href": "/catalog/instances/c814793a-99bb-9b44-85a9-18d162cb8df8",
+            "uri": "/catalog/instances/c814793a-99bb-9b44-85a9-18d162cb8df8",
+            "type": "application/vnd.sas.summary"
+          },
+          {
+            "method": "GET",
+            "rel": "up",
+            "href": "/catalog/instances",
+            "uri": "/catalog/instances",
+            "type": "application/vnd.sas.collection",
+            "itemType": "application/vnd.sas.metadata.instance"
+          },
+          {
+            "method": "PATCH",
+            "rel": "patch",
+            "href": "/catalog/updates/instances/c814793a-99bb-9b44-85a9-18d162cb8df8",
+            "uri": "/catalog/updates/instances/c814793a-99bb-9b44-85a9-18d162cb8df8",
+            "type": "application/json-patch",
+            "responseType": "application/vnd.sas.metadata.instance.entity"
+          },
+          {
+            "method": "PUT",
+            "rel": "update",
+            "href": "/catalog/instances/c814793a-99bb-9b44-85a9-18d162cb8df8",
+            "uri": "/catalog/instances/c814793a-99bb-9b44-85a9-18d162cb8df8",
+            "type": "application/vnd.sas.metadata.instance.entity",
+            "responseType": "application/vnd.sas.metadata.instance.entity"
+          },
+          {
+            "method": "DELETE",
+            "rel": "delete",
+            "href": "/catalog/instances/c814793a-99bb-9b44-85a9-18d162cb8df8",
+            "uri": "/catalog/instances/c814793a-99bb-9b44-85a9-18d162cb8df8"
+          },
+          {
+            "method": "GET",
+            "rel": "definition",
+            "href": "/catalog/definitions/87d48d12-53c0-473c-ab34-531817319e79",
+            "uri": "/catalog/definitions/87d48d12-53c0-473c-ab34-531817319e79",
+            "type": "application/vnd.sas.metadata.definition.entity"
+          }
+        ],
+        "version": 1,
+        "instanceType": "entity",
+        "definition": "casColumn",
+        "definitionId": "87d48d12-53c0-473c-ab34-531817319e79",
+        "name": "RECORD_RK",
+        "label": "_RKorSK",
+        "description": "_RKorSK",
+        "type": "casColumn",
+        "attributes": {
+          "analysisTimeStamp": "2026-04-30T09:33:51.172Z",
+          "bestChartType": "box",
+          "cardinalityCount": 11995,
+          "casDataType": "double",
+          "completenessPercent": 100,
+          "dataType": "num",
+          "hasOutliers": false,
+          "hasUniqueField": true,
+          "kurtosis": -1.228713269,
+          "leastCommonValue": 2702,
+          "max": 20960,
+          "mean": 6.406253,
+          "median": 12088,
+          "min": 2702,
+          "missingCount": 0,
+          "mode": 20960,
+          "mostCommonValue": 20960,
+          "nOutliers": 0,
+          "ordinalPosition": 1,
+          "quantiles25": 7368,
+          "quantiles50": 12088,
+          "quantiles75": 16795,
+          "rawLength": 8,
+          "sasDataType": "num",
+          "sasFormat": "F",
+          "sasFormatFull": "F12.",
+          "semanticTypeId": "GENERIC_ID",
+          "semanticTypeScore": 201,
+          "skewness": -0.019727681,
+          "standardDeviation": 5374.1627995,
+          "statisticalScale": "id",
+          "uniquenessPercent": 100
+        }
+      },
+
+      {
+        "creationTimeStamp": "2026-04-30T09:33:53.85Z",
+        "createdBy": "sasadm",
+        "modifiedTimeStamp": "2026-04-30T09:33:53.85Z",
+        "modifiedBy": "sasadm",
+        "id": "c814793a-99bb-9b44-85a9-18d162cb8df8",
+        "links": [
+          {
+            "method": "GET",
+            "rel": "self",
+            "href": "/catalog/instances/c814793a-99bb-9b44-85a9-18d162cb8df8",
+            "uri": "/catalog/instances/c814793a-99bb-9b44-85a9-18d162cb8df8",
+            "type": "application/vnd.sas.metadata.instance.entity"
+          },
+          {
+            "method": "GET",
+            "rel": "alternate",
+            "href": "/catalog/instances/c814793a-99bb-9b44-85a9-18d162cb8df8",
+            "uri": "/catalog/instances/c814793a-99bb-9b44-85a9-18d162cb8df8",
+            "type": "application/vnd.sas.summary"
+          },
+          {
+            "method": "GET",
+            "rel": "up",
+            "href": "/catalog/instances",
+            "uri": "/catalog/instances",
+            "type": "application/vnd.sas.collection",
+            "itemType": "application/vnd.sas.metadata.instance"
+          },
+          {
+            "method": "PATCH",
+            "rel": "patch",
+            "href": "/catalog/updates/instances/c814793a-99bb-9b44-85a9-18d162cb8df8",
+            "uri": "/catalog/updates/instances/c814793a-99bb-9b44-85a9-18d162cb8df8",
+            "type": "application/json-patch",
+            "responseType": "application/vnd.sas.metadata.instance.entity"
+          },
+          {
+            "method": "PUT",
+            "rel": "update",
+            "href": "/catalog/instances/c814793a-99bb-9b44-85a9-18d162cb8df8",
+            "uri": "/catalog/instances/c814793a-99bb-9b44-85a9-18d162cb8df8",
+            "type": "application/vnd.sas.metadata.instance.entity",
+            "responseType": "application/vnd.sas.metadata.instance.entity"
+          },
+          {
+            "method": "DELETE",
+            "rel": "delete",
+            "href": "/catalog/instances/c814793a-99bb-9b44-85a9-18d162cb8df8",
+            "uri": "/catalog/instances/c814793a-99bb-9b44-85a9-18d162cb8df8"
+          },
+          {
+            "method": "GET",
+            "rel": "definition",
+            "href": "/catalog/definitions/87d48d12-53c0-473c-ab34-531817319e79",
+            "uri": "/catalog/definitions/87d48d12-53c0-473c-ab34-531817319e79",
+            "type": "application/vnd.sas.metadata.definition.entity"
+          }
+        ],
+        "version": 1,
+        "instanceType": "entity",
+        "definition": "casColumn",
+        "definitionId": "87d48d12-53c0-473c-ab34-531817319e79",
+        "name": "ACTUAL_OUTCOME_VALUE_TO_RECORD",
+        "label": "_RKorSK",
+        "description": "_RKorSK",
+        "type": "casColumn",
+        "attributes": {
+          "analysisTimeStamp": "2026-04-30T09:33:51.172Z",
+          "bestChartType": "box",
+          "cardinalityCount": 11995,
+          "casDataType": "double",
+          "completenessPercent": 100,
+          "dataType": "num",
+          "hasOutliers": false,
+          "hasUniqueField": true,
+          "kurtosis": -1.228713269,
+          "leastCommonValue": 2702,
+          "max": 99960,
+          "mean": 99066.406253,
+          "median": 12088,
+          "min": 2702,
+          "missingCount": 0,
+          "mode": 20960,
+          "mostCommonValue": 20960,
+          "nOutliers": 0,
+          "ordinalPosition": 1,
+          "quantiles25": 7368,
+          "quantiles50": 12088,
+          "quantiles75": 99795,
+          "rawLength": 8,
+          "sasDataType": "num",
+          "sasFormat": "F",
+          "sasFormatFull": "F12.",
+          "semanticTypeId": "GENERIC_ID",
+          "semanticTypeScore": 201,
+          "skewness": -0.019727681,
+          "standardDeviation": 5374.1627995,
+          "statisticalScale": "id",
+          "uniquenessPercent": 100
+        }
+      },
+      
+      {
+        "creationTimeStamp": "2026-04-30T09:33:53.85Z",
+        "createdBy": "sasadm",
+        "modifiedTimeStamp": "2026-04-30T09:33:53.85Z",
+        "modifiedBy": "sasadm",
+        "id": "efb29126-3dd7-ea43-aedf-6d7c7f6975b1",
+        "links": [
+          {
+            "method": "GET",
+            "rel": "self",
+            "href": "/catalog/instances/efb29126-3dd7-ea43-aedf-6d7c7f6975b1",
+            "uri": "/catalog/instances/efb29126-3dd7-ea43-aedf-6d7c7f6975b1",
+            "type": "application/vnd.sas.metadata.instance.entity"
+          },
+          {
+            "method": "GET",
+            "rel": "alternate",
+            "href": "/catalog/instances/efb29126-3dd7-ea43-aedf-6d7c7f6975b1",
+            "uri": "/catalog/instances/efb29126-3dd7-ea43-aedf-6d7c7f6975b1",
+            "type": "application/vnd.sas.summary"
+          },
+          {
+            "method": "GET",
+            "rel": "up",
+            "href": "/catalog/instances",
+            "uri": "/catalog/instances",
+            "type": "application/vnd.sas.collection",
+            "itemType": "application/vnd.sas.metadata.instance"
+          },
+          {
+            "method": "PATCH",
+            "rel": "patch",
+            "href": "/catalog/updates/instances/efb29126-3dd7-ea43-aedf-6d7c7f6975b1",
+            "uri": "/catalog/updates/instances/efb29126-3dd7-ea43-aedf-6d7c7f6975b1",
+            "type": "application/json-patch",
+            "responseType": "application/vnd.sas.metadata.instance.entity"
+          },
+          {
+            "method": "PUT",
+            "rel": "update",
+            "href": "/catalog/instances/efb29126-3dd7-ea43-aedf-6d7c7f6975b1",
+            "uri": "/catalog/instances/efb29126-3dd7-ea43-aedf-6d7c7f6975b1",
+            "type": "application/vnd.sas.metadata.instance.entity",
+            "responseType": "application/vnd.sas.metadata.instance.entity"
+          },
+          {
+            "method": "DELETE",
+            "rel": "delete",
+            "href": "/catalog/instances/efb29126-3dd7-ea43-aedf-6d7c7f6975b1",
+            "uri": "/catalog/instances/efb29126-3dd7-ea43-aedf-6d7c7f6975b1"
+          },
+          {
+            "method": "GET",
+            "rel": "definition",
+            "href": "/catalog/definitions/87d48d12-53c0-473c-ab34-531817319e79",
+            "uri": "/catalog/definitions/87d48d12-53c0-473c-ab34-531817319e79",
+            "type": "application/vnd.sas.metadata.definition.entity"
+          }
+        ],
+        "version": 1,
+        "instanceType": "entity",
+        "definition": "casColumn",
+        "definitionId": "87d48d12-53c0-473c-ab34-531817319e79",
+        "name": "SCORE_TIME_SK",
+        "label": "_RKorSK",
+        "description": "_RKorSK",
+        "type": "casColumn",
+        "attributes": {
+          "analysisTimeStamp": "2026-04-30T09:33:51.172Z",
+          "bestChartType": "frequency",
+          "cardinalityCount": 1,
+          "casDataType": "double",
+          "completenessPercent": 100,
+          "dataType": "num",
+          "hasOutliers": false,
+          "hasUniqueField": false,
+          "leastCommonValue": 147,
+          "max": 147,
+          "mean": 147,
+          "median": 147,
+          "min": 147,
+          "missingCount": 0,
+          "mode": 147,
+          "mostCommonValue": 147,
+          "nOutliers": 0,
+          "ordinalPosition": 5,
+          "quantiles25": 147,
+          "quantiles50": 147,
+          "quantiles75": 147,
+          "rawLength": 8,
+          "sasDataType": "num",
+          "sasFormat": "F",
+          "sasFormatFull": "F11.",
+          "semanticTypeId": "DATE/TIME",
+          "semanticTypeScore": 201,
+          "standardDeviation": 0,
+          "statisticalScale": "unary",
+          "uniquenessPercent": 0.008336807
+        }
+      }
+    ],
+    "links": [
+      {
+        "method": "GET",
+        "rel": "self",
+        "href": "/catalog/instances?start=0&limit=3000&filter=and%28contains%28resourceId%2C%27_14_29_147_CONT_TGT_FACT%27%29%2Ceq%28definition%2C%27casColumn%27%29%29&sortBy=name",
+        "uri": "/catalog/instances?start=0&limit=3000&filter=and%28contains%28resourceId%2C%27_14_29_147_CONT_TGT_FACT%27%29%2Ceq%28definition%2C%27casColumn%27%29%29&sortBy=name",
+        "type": "application/vnd.sas.collection",
+        "itemType": "application/vnd.sas.metadata.instance"
+      },
+      {
+        "method": "GET",
+        "rel": "collection",
+        "href": "/catalog/instances",
+        "uri": "/catalog/instances",
+        "type": "application/vnd.sas.collection",
+        "itemType": "application/vnd.sas.metadata.instance"
+      },
+      {
+        "method": "GET",
+        "rel": "up",
+        "href": "/catalog",
+        "uri": "/catalog",
+        "type": "application/vnd.sas.api"
+      },
+      {
+        "method": "POST",
+        "rel": "create",
+        "href": "/catalog/instances",
+        "uri": "/catalog/instances",
+        "type": "application/vnd.sas.metadata.instance.archive",
+        "responseType": "application/vnd.sas.metadata.instance.archive"
+      }
+    ]
+  }
+}
