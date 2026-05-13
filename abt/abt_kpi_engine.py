@@ -1,9 +1,7 @@
-# abt/abt_kpi_engine.py
-
-def compute_abt_level_kpis(abt_base, abt_compare):
+def compute_abt_level_kpis(abt_base, abt_compare, target_column=None):
     """
     Compute ABT-level KPIs for comparison.
-    Returns a structured, decision-ready dictionary.
+    Implements Rules 2.2-A, 2.2-B, 2.2-C without breaking existing logic.
     """
 
     base_cols = abt_base.columns
@@ -15,7 +13,10 @@ def compute_abt_level_kpis(abt_base, abt_compare):
     # ---------------------------
     # Structural KPIs
     # ---------------------------
+    # Rule 2.2-A: Base ⊆ Compare (mandatory)
     missing_columns = sorted(base_col_names - comp_col_names)
+
+    # Rule 2.2-B: Additional columns allowed
     additional_columns = sorted(comp_col_names - base_col_names)
 
     # ---------------------------
@@ -70,22 +71,34 @@ def compute_abt_level_kpis(abt_base, abt_compare):
     )
 
     # ---------------------------
-    # Verdict Rules (v1 thresholds)
+    # Verdict Rules (v2 – structured)
     # ---------------------------
     verdict = "ACCEPTED"
     reasons = []
 
+    # Rule 2.2-A: Structural backward compatibility
     if missing_columns:
         verdict = "REJECTED"
-        reasons.append("Missing columns detected")
+        reasons.append("Base columns missing in compare ABT")
 
+    # Rule 2.2-C: Target column must persist
+    if target_column:
+        if target_column not in comp_col_names:
+            verdict = "REJECTED"
+            reasons.append(f"Target column '{target_column}' missing in compare ABT")
+
+    # Existing data quality rule (unchanged)
     if missing_delta is not None and missing_delta > 0.5:
         verdict = "REJECTED"
         reasons.append("Significant increase in missingness")
 
+    # Existing statistical stability rule (unchanged)
     if mean_alignment_pct is not None and mean_alignment_pct < 75:
         verdict = "REJECTED"
         reasons.append("Large statistical deviation in features")
+
+    if not reasons:
+        reasons.append("Within acceptable limits")
 
     # ---------------------------
     # Final Output
@@ -104,11 +117,11 @@ def compute_abt_level_kpis(abt_base, abt_compare):
         },
         "statistical_alignment": {
             "mean_alignment_pct": mean_alignment_pct,
-            "red_flag_columns": red_flag_columns[:10],  # show top 10 only
+            "red_flag_columns": red_flag_columns[:10],
             "total_compared": mean_total,
         },
         "verdict": {
             "result": verdict,
-            "reasons": reasons or ["Within acceptable limits"],
+            "reasons": reasons,
         }
     }

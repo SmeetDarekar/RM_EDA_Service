@@ -62,6 +62,43 @@
     {% endif %}
   {% endif %}
 
+
+  {% if column_kpi_insights and column_kpi_insights | length > 0 %}
+<hr>
+
+<h3>Column‑Level KPI Insights</h3>
+
+<table border="1" cellpadding="6" cellspacing="0">
+  <tr>
+    <th>Column</th>
+    <th>KPI</th>
+    <th>Value(s)</th>
+    <th>Drift</th>
+    <th>Interpretation</th>
+  </tr>
+
+  {% for row in column_kpi_insights %}
+  <tr>
+    <td>{{ row.column }}</td>
+    <td>{{ row.kpi }}</td>
+    
+<td>
+  {% if row.compare_value is not none and row.compare_value != row.base_value %}
+    {{ row.base_value }} → {{ row.compare_value }}
+  {% else %}
+    {{ row.base_value }}
+  {% endif %}
+</td>
+
+    <td>
+      {{ row.drift if row.drift is not none else "—" }}
+    </td>
+    <td>{{ row.interpretation }}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endif %}
+
   <br>
   <a href="/">Back</a>
 </body>

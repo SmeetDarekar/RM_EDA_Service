@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Select Target Column</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+
+    h3 {
+      margin-top: 0;
+    }
+
+    .reason {
+      color: #b58900;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    select {
+      width: 300px;
+      padding: 6px;
+      margin-top: 8px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 8px 16px;
+      cursor: pointer;
+    }
+
+    .error {
+      color: red;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <h3>Target Column Required</h3>
+
+  {% if error %}
+    <p class="error">{{ error }}</p>
+  {% endif %}
+
+  {% if reason %}
+    <p class="reason">{{ reason }}</p>
+  {% endif %}
+
+  <p>
+    No unique target column could be detected automatically.
+    Please select the target column to continue the analysis.
+  </p>
+
+  <!-- IMPORTANT: This posts back to /analyze ONLY -->
+  <form method="POST" action="/analyze">
+    <input type="hidden" name="table" value="{{ table }}">
+
+    <label for="target">Target Column:</label><br>
+
+    <select name="target" id="target" required>
+      <option value="">-- Select a column --</option>
+
+      {% if candidates and candidates | length > 0 %}
+        <optgroup label="Suggested Candidates">
+          {% for col in candidates %}
+            <option value="{{ col }}">{{ col }}</option>
+          {% endfor %}
+        </optgroup>
+      {% endif %}
+
+      <optgroup label="All Columns">
+        {% for col in all_columns %}
+          <option value="{{ col }}">{{ col }}</option>
+        {% endfor %}
+      </optgroup>
+    </select>
+
+    <br>
+
+    <button type="submit">Continue Analysis</button>
+  </form>
+
+</body>
+</html>

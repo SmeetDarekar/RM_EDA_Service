@@ -305,6 +305,61 @@
 </p>
 {% endif %}
 
+
+
+
+
+{% if column_kpi_insights and column_kpi_insights|length > 0 %}
+<hr>
+
+<h3>Column‑Level KPI Insights (Comparison)</h3>
+
+<table border="1" cellpadding="6" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>Column</th>
+      <th>KPI</th>
+      <th>Base → Compare</th>
+      <th>Drift</th>
+      <th>Interpretation</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {% for row in column_kpi_insights %}
+    <tr>
+      <td>{{ row.column }}</td>
+
+      <td>{{ row.kpi }}</td>
+
+      <td>
+        {% if row.compare_value is not none %}
+          {{ row.base_value }} → {{ row.compare_value }}
+        {% else %}
+          {{ row.base_value }}
+        {% endif %}
+      </td>
+
+      <td>
+        {% if row.drift is not none %}
+          {{ row.drift }}
+        {% else %}
+          —
+        {% endif %}
+      </td>
+
+      <td>{{ row.interpretation }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endif %}
+
+
+
+
+
+
 <!-- ================================================= -->
 <!-- 6. NAVIGATION -->
 <!-- ================================================= -->
